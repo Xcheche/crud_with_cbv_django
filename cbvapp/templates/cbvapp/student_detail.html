@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load custom_filter %}
+<ul>
+   <li>Name: {{ student.name|myAppend:"Mr " }}</li> 
+   
+    <li>Sex: {{ student.sex|myLove }}</li>
+     <li>Course: {{ student.course|myLower }}</li>
+      <li>Age: {{ student.age| add:"2" }}</li>
+      <a href="{% url 'student_update' student.id %}">Update</a>
+      <a href="{% url 'student_delete' student.id %}">Delete</a>
+</ul>
+
+{% endblock %}
